@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Для Кристи ❤️</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+.photos{
+
+display:none;
+
+min-height:100vh;
+
+justify-content:center;
+
+align-items:center;
+
+padding:20px;
+
+}
+
+.photo-box{
+
+margin:25px 0;
+
+}
+
+.photo-box img{
+
+width:100%;
+
+max-width:320px;
+
+display:block;
+
+margin:auto;
+
+border-radius:20px;
+
+box-shadow:0 0 20px rgba(236,72,153,.3);
+
+}
+
+.photo-box p{
+
+margin-top:12px;
+
+font-size:18px;
+
+line-height:1.5;
+
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    min-height:100vh;
+    background:#08070d;
+    color:white;
+    font-family:'Outfit', sans-serif;
+    overflow-x:hidden;
+
+}
+
+
+.background{
+
+    position:fixed;
+    width:100%;
+    height:100%;
+
+    background:
+    radial-gradient(circle at top,#8b5cf655,transparent 40%),
+    radial-gradient(circle at bottom,#ec489955,transparent 40%);
+
+    z-index:-1;
+
+}
+
+
+
+.intro{
+
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:20px;
+
+}
+
+
+.typing{
+
+    font-size:30px;
+    min-height:60px;
+
+}
+
+
+
+button{
+
+    margin-top:30px;
+    padding:16px 35px;
+
+    border:none;
+    border-radius:50px;
+
+    background:
+    linear-gradient(135deg,#8b5cf6,#ec4899);
+
+    color:white;
+    font-size:18px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 0 25px #ec489977;
+
+}
+
+#musicBtn{
+
+position:fixed;
+top:20px;
+right:20px;
+
+margin:0;
+
+padding:12px 20px;
+
+font-size:15px;
+
+z-index:999;
+
+}
+
+
+.main{
+
+    display:none;
+
+    min-height:100vh;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+
+}
+
+
+
+.card{
+
+    max-width:430px;
+
+    width:100%;
+
+    padding:40px 25px;
+
+    text-align:center;
+
+    border-radius:30px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,.15);
+
+    animation:fade .8s ease;
+
+}
+
+
+
+h1{
+
+    font-size:42px;
+
+}
+
+
+
+.name{
+
+    font-size:40px;
+
+    margin:20px;
+
+    color:#f9a8d4;
+
+}
+
+
+
+.age{
+
+    font-size:70px;
+
+    color:#f9a8d4;
+
+}
+
+
+
+.text{
+
+    font-size:20px;
+
+    line-height:1.6;
+
+}
+
+
+
+.story{
+
+    display:none;
+
+    min-height:100vh;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+}
+
+
+
+.memory{
+
+    margin:20px 0;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    background:
+    rgba(255,255,255,.08);
+
+}
+
+.heart{
+
+position:fixed;
+
+top:-50px;
+
+pointer-events:none;
+
+user-select:none;
+
+animation:fall linear forwards;
+
+z-index:999;
+
+}
+
+
+
+@keyframes fall{
+
+0%{
+
+transform:translateY(-10vh) rotate(0deg);
+opacity:0;
+
+}
+
+15%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(110vh) rotate(360deg);
+opacity:0;
+
+}
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="background"></div>
+
+<button id="musicBtn" onclick="toggleMusic()">
+🔊 Музыка
+</button>
+
+<div class="intro" id="intro">
+
+<div class="typing" id="typing"></div>
+
+
+<button id="btn" onclick="openGift()" style="display:none">
+
+✨ Открыть подарок
+
+</button>
+
+
+</div>
+
+<div class="main" id="main">
+
+
+<div class="card">
+
+
+<h1>
+з днем народження
+</h1>
+
+
+<div class="name">
+кристя ❤️
+</div>
+
+
+<div class="age">
+21
+</div>
+
+
+<div class="text">
+
+спасибо,
+что всё это время
+делаешь счастливее.
+
+<br><br>
+
+сделал открытку для тебя из того что было под рукой
+
+
+<br><br>
+
+
+<button onclick="showStory()">
+💜 ми
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="story" id="story">
+
+
+<div class="card">
+
+
+<h1 id="storyTitle">
+ми ❤️
+</h1>
+
+
+
+<div class="text" id="storyText">
+
+
+<div class="memory">
+
+🌙 наше знакомство это поистине дивное и счастливое время, счастливый момент
+
+</div>
+
+
+<div class="memory">
+
+❤️ благодаря нашему знакомству зародились наши отношения
+
+</div>
+
+
+<div class="memory">
+
+🌍 чему я и по сей день несказанно рад и счастлив этому
+
+<br><br>
+
+и я не идеален к сожалению , ты прости меня
+
+<br><br>
+
+и мне искренне жаль что я расстраиваю тебя очень часто
+
+</div>
+
+
+<div class="memory">
+
+💜 но я сделаю все чтобы ты не пожелела за то,
+что выбираешь меня всё это время...
+
+</div>
+
+
+
+</div>
+
+
+<button onclick="nextStory()">
+
+Дальше ✨
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
+<script>
+
+
+let text = [
+
+"привет сонце ❤️",
+
+"поздравляю тебя з днем народження.",
+
+"сделал открытку из того что было под рукой."
+
+];
+
+
+let i = 0;
+let j = 0;
+
+
+function typing(){
+
+
+if(i < text.length){
+
+
+if(j < text[i].length){
+
+
+document.getElementById("typing").innerHTML += text[i][j];
+
+j++;
+
+setTimeout(typing,80);
+
+
+}
+
+else{
+
+
+setTimeout(()=>{
+
+
+document.getElementById("typing").innerHTML="";
+
+i++;
+
+j=0;
+
+typing();
+
+
+},1200);
+
+
+}
+
+
+}
+
+else{
+
+
+document.getElementById("btn").style.display="block";
+
+
+}
+
+
+}
+
+
+
+typing();
+
+
+
+
+
+function openGift(){
+
+document.getElementById("intro").style.display="none";
+
+document.getElementById("main").style.display="flex";
+
+document.getElementById("music").play();
+
+}
+
+function toggleMusic(){
+
+let music=document.getElementById("music");
+let btn=document.getElementById("musicBtn");
+
+if(music.paused){
+
+music.play();
+btn.innerHTML="🔇 Выключить музыку";
+
+}else{
+
+music.pause();
+btn.innerHTML="🔊 Включить музыку";
+
+}
+
+}
+
+
+
+function showStory(){
+
+
+document.getElementById("main").style.display="none";
+
+
+document.getElementById("story").style.display="flex";
+
+
+}
+
+function showLetter(){
+
+document.getElementById("photos").style.display="none";
+
+document.getElementById("letter").style.display="flex";
+
+document.getElementById("letter").style.animation="fade .8s ease";
+
+window.scrollTo(0,0);
+
+}
+
+
+
+let story = [
+
+"🌙 наша история началась неоднозначно, и со стороны не совсем понятно, но я правда счастлив от того что в один день мне повезло привлечь твое внимание ко мне ❤️",
+
+"❤️ 27 08 2023 наша дата",
+
+"✨ мне хочется написать об этом именно в таком формате потому что в этом есть что то особое, как по мне... запечатлеть это так, лучше чем потерять среди десятков тысяч сообщения, но это не значит , что второе не имеет смысла",
+
+"💜 мне не передать никакими словами, то, как я благодарен тебе, поскольку ты дала мне понять значимость, ценность, помогла посмотреть на что либо другими глазами, показала мне как может быть и в этом есть смысл, ты уже оставила свой след в моей жизни, нашей истории...",
+
+"🌍 отдача-взаимность-развитие, я очень ценю то что все построено именно на этом, а не на однобокости, поскольку это именно то, может , чего мне не хватало...когда оба человека имеют, то что имеют... ценят то, что делает один другому, ценят друг друга без фальши, ничего не уходит в никуда...",
+
+"❤️ Я люблю разговаривать с тобой , рассказывать тебе что угодно, слушать тебя, слышать тебя, узнавать тебя в целом... я люблю все, что связано с тобой, буквально... мне очень нравится как ты видишь и ощущаешь этот мир, мне нравится то как я ощущаю тебя, а также то, как я ощущаю себя после твоего появления в моей жизни я хочу искренне заполнить некие пробелы в твоей жизни добром, нежностью, позитивом, чем то приятным. я просто хочу тебя оберегать, лелеять, и наверное во всем этом самое приятное - осознавать что это общее нашло отклик в разных людях одновременно... это придает крылья получше чем любой наркотик имхо... если в словах, описать, то , что я к тебе чувствую, то это чувство гармонии, спокойствия, и ....."
+
+];
+
+
+let storyNumber = 0;
+
+
+
+function nextStory(){
+
+
+if(storyNumber < story.length){
+
+
+document.getElementById("storyText").innerHTML =
+"<div class='memory'>" + story[storyNumber] + "</div>";
+
+
+storyNumber++;
+
+
+}
+
+else{
+
+document.getElementById("story").style.display="none";
+
+document.getElementById("photos").style.display="flex";
+
+}
+
+
+
+}
+
+
+
+
+
+setInterval(()=>{
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML=Math.random()>0.5 ? "❤️" : "💜";
+
+heart.style.left=Math.random()*100+"%";
+
+heart.style.fontSize=(18+Math.random()*30)+"px";
+
+heart.style.animationDuration=(5+Math.random()*4)+"s";
+
+heart.style.opacity=Math.random()*0.5+0.5;
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},9000);
+
+},500);
+
+
+</script>
+
+<audio id="music" loop>
+
+<source src="music/song.mp3" type="audio/mpeg">
+
+</audio>
+
+<div class="photos" id="photos">
+
+<div class="card">
+
+<h1>
+фотокарточки
+</h1>
+
+
+<div class="photo-box">
+
+<img src="photo1.jpg" alt="Наш момент">
+
+<p>
+ ❤️
+</p>
+
+</div>
+
+
+<div class="photo-box">
+
+<img src="photo2.jpg" alt="Наш момент">
+
+<p>
+ ✨
+</p>
+
+</div>
+
+
+<div class="photo-box">
+
+<img src="photo3.jpg" alt="Наш момент">
+
+<p>
+ 💜
+</p>
+
+</div>
+
+
+<div class="photo-box">
+
+<img src="photo4.jpg" alt="Наш момент">
+
+<p>
+ ❤️
+</p>
+
+</div>
+
+<div class="photo-box">
+
+<img src="photo5.jpg" alt="Наш момент">
+
+<p>
+ну ето типо ми 
+</p>
+
+</div>
+
+<button onclick="showLetter()">
+💌 Открыть письмо
+</button>
+
+</div>
+
+</div>
+
+
+<div class="story" id="letter">
+
+<div class="card">
+
+<h1>
+Для тебя ❤️
+</h1>
+
+<div class="text">
+
+Спасибо тебе...
+
+...
+
+Я люблю тебя. ❤️
+
+</div>
+
+</div>
+
+</div>
+
+
+</body>
+
+</html>
